@@ -13,16 +13,13 @@ class FilterTable extends React.Component {
         this.updateStock = this.updateStock.bind(this);
     }
 
-    updateFilterText (e) {
-        const value = e.target.value;
+    updateFilterText (value) {
         this.setState({
             filterText: value
         });
     }
 
-    updateStock (e) {
-        const value = e.target.checked;
-
+    updateStock (value) {
         this.setState({
             inStockOnly: value
         });
@@ -44,4 +41,5 @@ class FilterTable extends React.Component {
         );
     }
 }
+
 export default FilterTable

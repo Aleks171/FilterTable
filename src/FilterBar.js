@@ -1,22 +1,36 @@
 import React from 'react';
 
 class FilterBar extends React.Component {
-    
+    constructor(props) {
+        super(props);
+        this.handleCheckboxClick = this.handleCheckboxClick.bind(this);
+        this.handleSearchFieldClick = this.handleSearchFieldClick.bind(this);
+      }
+    handleCheckboxClick () {
+        const value = this.input.checked;
+        this.props.updateOnStockChange(value);
+    }
+
+    handleSearchFieldClick () {
+        const value = this.text.value;
+        this.props.updateOnSearchChange(value);
+    }
+
     render () {
-        const text = this.props.filterText;
         const inStock = this.props.inStock;
         return (
             <form>
-                <input type="text" placeholder="Search..."
-                        value={text}
-                        onChange={this.props.updateOnSearchChange}/><br/>
+                <input  type="text" 
+                        placeholder="Search..."
+                        onChange={this.handleSearchFieldClick}
+                        ref={(textToFilter) => this.text = textToFilter}/><br/>
                 <p>
-                    <input type="checkbox"
-                            onChange={this.props.updateOnStockChange}
-                            checked={inStock}/>
+                    <input  type="checkbox"
+                            onChange={this.handleCheckboxClick}
+                            checked={inStock}
+                            ref={(input) => this.input = input}/>
                     Show only what in stock
                 </p>
-                
             </form>
         );
     }
