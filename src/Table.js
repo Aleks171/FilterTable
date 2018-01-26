@@ -7,7 +7,7 @@ class Table extends React.Component {
         const rows = [];
         const products = this.props.products;
         let currentProductCategory;
-        let filterText = this.props.filterText;
+        const filterText = this.props.filterText;
         const inStock = this.props.inStockOnly;
 
         products.forEach((product, index) => {
