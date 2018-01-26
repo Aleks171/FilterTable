@@ -3,9 +3,6 @@ import ProductCategory from './ProductCategory';
 import ProductRow from './ProductRow';
 
 class Table extends React.Component {
-    generateID () {
-        return Math.round(Math.random() * 100000);
-    }
     render () {
         const rows = [];
         const products = this.props.products;
@@ -13,7 +10,7 @@ class Table extends React.Component {
         let filterText = this.props.filterText;
         const inStock = this.props.inStockOnly;
 
-        products.forEach((product) => {
+        products.forEach((product, index) => {
             let row;
 
             if ((product.name.indexOf(filterText) === -1) || (inStock && !product.stocked)) {
@@ -22,13 +19,13 @@ class Table extends React.Component {
                                    
             if (product.category !== currentProductCategory) {
                 row = <ProductCategory 
-                            key={this.generateID()}
+                            key={product.category + index}
                             product={product} />;
                 rows.push(row);
             }
 
             row = <ProductRow 
-                        key={this.generateID()}
+                        key={product.category + product.name}
                         product={product} />;
             rows.push(row);
             currentProductCategory = product.category;          
