@@ -1,14 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
 import registerServiceWorker from './registerServiceWorker';
-
 import FilterTable from './FilterTable';
-import FilterBar from './FilterBar';
-import Table from './Table';
-import ProductCategory from './ProductCategory';
-import ProductRow from './ProductRow';
 
 const PRODUCTS = [
     {category: 'Sporting Goods', price: '$49.99', stocked: true, name: 'Football'},
