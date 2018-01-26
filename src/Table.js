@@ -15,15 +15,9 @@ class Table extends React.Component {
 
         products.forEach((product) => {
             let row;
-           
-            if (product.name.indexOf(filterText) === -1) {
-                return;
-            }
 
-            if (inStock) {
-                if (product.stocked !== inStock) {
-                    return;
-                }
+            if ((product.name.indexOf(filterText) === -1) || (inStock && !product.stocked)) {
+                return;
             }
                                    
             if (product.category !== currentProductCategory) {
