@@ -23,7 +23,7 @@ class FilterBar extends React.Component {
                 <input  type="text" 
                         placeholder="Search..."
                         onChange={this.handleSearchFieldClick}
-                        ref={(textToFilter) => this.text = textToFilter}/><br/>
+                        ref={(textToFilter) => this.text = textToFilter}/>
                 <p>
                     <input  type="checkbox"
                             onChange={this.handleCheckboxClick}
