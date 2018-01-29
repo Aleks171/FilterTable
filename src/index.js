@@ -3,10 +3,10 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import registerServiceWorker from './registerServiceWorker';
 import FilterTable from './FilterTable';
-import PRODUCTS from './PRODUCTS';
+import products from './consts/data';
 
 ReactDOM.render(
-    <FilterTable products={PRODUCTS}/>,
+    <FilterTable products={products}/>,
     document.getElementById('root')
 );
 
